@@ -6,7 +6,7 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:33:40 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/09/28 00:23:54 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/10 17:28:47 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	test(void)
 	const char*	source = " Salut9";
 	char		dest_1[SOURCE_SIZE];
 	char		dest_2[SOURCE_SIZE];
-
+	
 	/* declaration */
 	s_test[0] = "";
 	s_test[1] = "123";
@@ -52,7 +52,7 @@ int	test(void)
 	printf(" ft_bzero");
 	ft_bzero(dest_1, SOURCE_SIZE);
 	bzero(dest_2, SOURCE_SIZE);
-	if(memcmp(dest_1, dest_1, SOURCE_SIZE))
+	if(memcmp(dest_1, dest_2, SOURCE_SIZE))
 	{
 		fprintf(stderr, " FAILED\n expected %s, got %s\n", (char *) dest_2, (char *) dest_1);
 		return (0);
@@ -82,9 +82,22 @@ int	test(void)
 		return (0);
 	}
 	printf(" good\n");
-	
+
+
+	/* ft_memmove */
+	printf(" ft_memmove");
+	/* " Salut9" -> " Saalt9" */
+	ft_memmove(dest_1 + 3, dest_1 + 2, 2);
+	if (memcmp(dest_1, " Saalt9", 2))
+	{
+		fprintf(stderr, " FAILED\n expected %s, got %s\n", "saalt9", (char *) dest_1);
+		return (0);
+	}
+	printf(" good\n");
+
+
 	/* ft_memcmp */
-	printf( "ft_memcmp");
+/*	printf( "ft_memcmp");
 	i = 0;
 	while( i < S_TEST_SIZE - 1)
 	{
@@ -108,6 +121,16 @@ int	test(void)
 	}
 	
 	printf(" good\n");
+*/
+	/* ft_atoi */
+	printf(" ft_atoi");
+	if (ft_atoi("  -2147483648") != atoi("   -2147483648"))
+	{
+		fprintf(stderr, " FAILED\n expected %d, got %d\n", atoi("   -2147483648"), ft_atoi("   -2147483648"));
+		return (0);
+	}
+	printf(" good\n");
+	
 	return (1);
 }
 
