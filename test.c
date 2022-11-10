@@ -6,7 +6,7 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:33:40 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/10 17:28:47 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:41:20 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	test(void)
 	const char*	source = " Salut9";
 	char		dest_1[SOURCE_SIZE];
 	char		dest_2[SOURCE_SIZE];
-	
 	/* declaration */
 	s_test[0] = "";
 	s_test[1] = "123";
@@ -130,7 +129,19 @@ int	test(void)
 		return (0);
 	}
 	printf(" good\n");
-	
+
+	/* ft_calloc */
+	printf(" ft_calloc");
+	int		*arrint_1;
+	int		*arrint_2;
+	arrint_1 = ft_calloc(SOURCE_SIZE, sizeof(int));
+	arrint_2 = calloc(SOURCE_SIZE, sizeof(int));
+	if (memcmp(arrint_1, arrint_2, SOURCE_SIZE * sizeof(int)))
+	{
+		fprintf(stderr, " FAILED\n");
+		return (0);
+	}
+	printf(" good\n");
 	return (1);
 }
 

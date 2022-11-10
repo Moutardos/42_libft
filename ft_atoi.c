@@ -6,12 +6,12 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:07:04 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/10 17:29:53 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:06:15 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static int ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	if (c == ' ')
 		return (1);
@@ -35,7 +35,7 @@ int	ft_atoi(const char *nptr)
 			sign *= -1;
 		i++;
 	}
-	while(nptr[i] && ft_isdigit(nptr[i]))
+	while (nptr[i] && ft_isdigit(nptr[i]))
 	{
 		res *= 10;
 		res += (nptr[i] - '0') * sign;

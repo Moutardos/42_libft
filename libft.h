@@ -6,14 +6,15 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:35:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/10/21 17:35:11 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:31:54 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stddef.h>
-
+# include <stdlib.h>
+# include <stdint.h>
 /*return the length of the NUL character terminated string s*/
 size_t	ft_strlen(const char *s);
 
@@ -30,9 +31,29 @@ void	ft_bzero(void *s, size_t n);
 
 /* return 0 if they have the same data, positive number if the
    first different byte is bigger or else a negative number */
-int	ft_memcmp(const void *s1, const void *s2, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /* return the first occurence of the c in the nth bytes of s*/
 void	*ft_memchr(const void *s, int c, size_t n);
 
+/* return 1 if the character is a letter */
+int		ft_isalpha(int c);
+
+/* return 1 if the character is a digit */
+int		ft_isdigit(int c);
+
+/* return 1 if the character is a letter or a digit*/
+int		ft_isalnum(int c);
+
+/* return 1 if the character is in the ascii table */
+int		ft_isascii(int c);
+
+/* return 1 if the character is printable */
+int		ft_isprint(int c);
+
+/* convert and return the value inside nptr as an integer */
+int		ft_atoi(const char *nptr);
+
+/* allocate an array of nmemb of size, all set to 0 */
+void	*ft_calloc(size_t nmemb, size_t size);
 #endif
