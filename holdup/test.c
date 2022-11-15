@@ -6,7 +6,7 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:33:40 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/15 17:47:25 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:02:15 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,12 +153,25 @@ int	test(void)
 		return (0);	
 	}
 	printf(" good\n");
+	
+	/* display */
 	ft_putchar_fd('v', STDOUT);
-	ft_putstr_fd(" allo!\n", STDOUT);
+	ft_putstr_fd(" allo! voici putnbr pour 123, -12 et - 2147483648\n", STDOUT);
 	ft_putnbr_fd(123, STDOUT);
+	ft_putchar_fd('\n', STDOUT);
 	ft_putnbr_fd(-12, STDOUT);
+	ft_putchar_fd('\n', STDOUT);
 	ft_putnbr_fd(-2147483648, STDOUT);
-	printf("Bide\n");
+	ft_putchar_fd('\n', STDOUT);
+	
+	/* ft_strsub */
+	char	*str_sub;
+	str_sub = ft_substr(source, 2, 3);
+	if (strcmp(str_sub, "alu"))
+	{
+		fprintf(stderr, " FAILED\n expected %s, got %s\n", "alu" , str_sub);
+		return (0);		
+	}
 	return (1);
 }
 

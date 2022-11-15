@@ -6,7 +6,7 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:35:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/10 18:31:54 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:30:30 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdint.h>
+# include <unistd.h>
+# define STDOUT 1
+# define STDIN 0
+
+/*** PART 1 ***/
 /*return the length of the NUL character terminated string s*/
 size_t	ft_strlen(const char *s);
 
@@ -54,6 +59,47 @@ int		ft_isprint(int c);
 /* convert and return the value inside nptr as an integer */
 int		ft_atoi(const char *nptr);
 
-/* allocate an array of nmemb of size, all set to 0 */
+/* allocate an array of nmemb elements, all set to 0 */
 void	*ft_calloc(size_t nmemb, size_t size);
+
+/* duplicate a string and return a pointer to it */
+char	*ft_strdup(const char *s);
+
+/* return the character to uppercase */
+int		ft_toupper(int c);
+
+/* return the character to lowercase */
+int		ft_tolower(int c);
+
+/* return a pointer to the first ocurence of c in the string s */
+char	*ft_strchr(const char *s, int c);
+
+/* return a pointer to the last occurence of c in the string s */
+char	*ft_strrchr(const char *s, int c);
+
+/* copy and concatenate src into dst, garantee to be NUL terminated */
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+
+/* compare 2 string, return positive if s1 > s2, negative if s2 > s1 
+   else 0 if equal */
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+
+
+/*** PART 2 ***/
+
+/* allocate and return a string based on s, starting on index start of len size*/
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+/** diplay the character c in the file descriptor fd **/
+void	ft_putchar_fd(char c, int fd);
+
+/** display the string s in the file descriptor **/
+void	ft_putstr_fd(char *s, int fd);
+
+/** display the string s in the file descriptor followed by a newline **/
+void	ft_putendl_fd(char *s, int fd);
+
+/* print the integer in the file director */
+void	ft_putnbr_fd(int n, int fd);
 #endif

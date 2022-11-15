@@ -6,7 +6,7 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:35:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/15 16:49:12 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:31:42 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdint.h>
 # include <unistd.h>
 # define STDOUT 1
-# define STDIN 2
+# define STDIN 0
 
 /*** PART 1 ***/
 /*return the length of the NUL character terminated string s*/
@@ -65,7 +65,16 @@ void	*ft_calloc(size_t nmemb, size_t size);
 /* duplicate a string and return a pointer to it */
 char	*ft_strdup(const char *s);
 
+/* return the character to uppercase */
+int		ft_toupper(int c);
+
+/* return the character to lowercase */
+int		ft_tolower(int c);
 /*** PART 2 ***/
+
+/* allocate and return a string based on s, starting on index start of len size*/
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
 /** diplay the character c in the file descriptor fd **/
 void	ft_putchar_fd(char c, int fd);
 
