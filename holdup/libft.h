@@ -1,0 +1,80 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/17 01:35:07 by lcozdenm          #+#    #+#             */
+/*   Updated: 2022/11/15 16:49:12 by lcozdenm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef LIBFT_H
+# define LIBFT_H
+# include <stddef.h>
+# include <stdlib.h>
+# include <stdint.h>
+# include <unistd.h>
+# define STDOUT 1
+# define STDIN 2
+
+/*** PART 1 ***/
+/*return the length of the NUL character terminated string s*/
+size_t	ft_strlen(const char *s);
+
+/*copy memory of size n from src to dest*/
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+
+/*move memory of length len from src to dst, can overlap*/
+void	*ft_memmove(void *dst, const void *src, size_t len);
+/* set the nth byte of b to c */
+void	*ft_memset(void *b, int c, size_t len);
+
+/* set the nth byte of s to 0 */
+void	ft_bzero(void *s, size_t n);
+
+/* return 0 if they have the same data, positive number if the
+   first different byte is bigger or else a negative number */
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+
+/* return the first occurence of the c in the nth bytes of s*/
+void	*ft_memchr(const void *s, int c, size_t n);
+
+/* return 1 if the character is a letter */
+int		ft_isalpha(int c);
+
+/* return 1 if the character is a digit */
+int		ft_isdigit(int c);
+
+/* return 1 if the character is a letter or a digit*/
+int		ft_isalnum(int c);
+
+/* return 1 if the character is in the ascii table */
+int		ft_isascii(int c);
+
+/* return 1 if the character is printable */
+int		ft_isprint(int c);
+
+/* convert and return the value inside nptr as an integer */
+int		ft_atoi(const char *nptr);
+
+/* allocate an array of nmemb elements, all set to 0 */
+void	*ft_calloc(size_t nmemb, size_t size);
+
+/* duplicate a string and return a pointer to it */
+char	*ft_strdup(const char *s);
+
+/*** PART 2 ***/
+/** diplay the character c in the file descriptor fd **/
+void	ft_putchar_fd(char c, int fd);
+
+/** display the string s in the file descriptor **/
+void	ft_putstr_fd(char *s, int fd);
+
+/** display the string s in the file descriptor followed by a newline **/
+void	ft_putendl_fd(char *s, int fd);
+
+/* print the integer in the file director */
+void	ft_putnbr_fd(int n, int fd);
+#endif

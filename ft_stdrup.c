@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_stdrup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 16:52:04 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/15 17:31:19 by lcozdenm         ###   ########.fr       */
+/*   Created: 2022/11/10 18:44:37 by lcozdenm          #+#    #+#             */
+/*   Updated: 2022/11/10 18:47:52 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "libft.h"
+
+char	*strdup(const char *s)
 {
-	if (c >= 'a' && c <= 'z')
-		return ('A' + (c - 'a'));
-	return (c);
+	char	*str;
+	size_t	size;
+
+	size = ft_strlen(s) + 1;
+	str = malloc(sizeof(char) * size);
+	
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:33:40 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/10 18:41:20 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:47:25 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,23 @@ int	test(void)
 		return (0);
 	}
 	printf(" good\n");
+
+	/* ft_strdup */
+	printf(" ft_strdup");
+	char	*str_dup;
+	str_dup = ft_strdup(source);
+	if (str_dup == source || strcmp(str_dup, source))
+	{
+		fprintf(stderr, " FAILED\n expected %s, got %s\n", source, str_dup);
+		return (0);	
+	}
+	printf(" good\n");
+	ft_putchar_fd('v', STDOUT);
+	ft_putstr_fd(" allo!\n", STDOUT);
+	ft_putnbr_fd(123, STDOUT);
+	ft_putnbr_fd(-12, STDOUT);
+	ft_putnbr_fd(-2147483648, STDOUT);
+	printf("Bide\n");
 	return (1);
 }
 
