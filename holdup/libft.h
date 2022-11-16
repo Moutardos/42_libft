@@ -6,7 +6,7 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:35:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/15 18:31:42 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:07:08 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,24 @@ int		ft_toupper(int c);
 
 /* return the character to lowercase */
 int		ft_tolower(int c);
+
+/* return a pointer to the first ocurence of c in the string s */
+char	*ft_strchr(const char *s, int c);
+
+/* return a pointer to the last occurence of c in the string s */
+char	*ft_strrchr(const char *s, int c);
+
+/* copy and concatenate src into dst, garantee to be NUL terminated */
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+
+/* compare 2 string, return positive if s1 > s2, negative if s2 > s1 
+   else 0 if equal */
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+
+/* locate the string little inside the string big and return where it begins.
+   doesn't search after len character */
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 /*** PART 2 ***/
 
 /* allocate and return a string based on s, starting on index start of len size*/

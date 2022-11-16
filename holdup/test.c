@@ -6,7 +6,7 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:33:40 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/15 19:02:15 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/16 18:53:00 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,12 @@ int	test(void)
 	}
 	printf(" good\n");
 
+	/* ft_strnstr */
+	char * big = "Bonjour on test ici";
+	char * res;
+
+	res = ft_strnstr("lorem ipsum dolor sit amet", "lorem", 15);
+	printf("%s\n", res);
 	/* ft_calloc */
 	printf(" ft_calloc");
 	int		*arrint_1;

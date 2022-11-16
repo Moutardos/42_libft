@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 19:25:59 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/16 20:02:29 by lcozdenm         ###   ########.fr       */
+/*   Created: 2022/11/16 16:03:57 by lcozdenm          #+#    #+#             */
+/*   Updated: 2022/11/16 19:34:09 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	size_t		i;
+	size_t		j;
 
 	i = 0;
-	str1 = (unsigned char *) s1;
-	str2 = (unsigned char *) s2;
-	if (n == 0 || str1 == NULL || str2 == NULL)
-		return (0);
-	while (*str1 == *str2 && (*str1 != '\0') && i < n)
+	j = 0;
+	if (big == NULL || little == NULL || little[0] == '\0')
+		return ((char *) big);
+	while (i < len && big[i] != '\0')
 	{
-		i++;
-		if (i != n)
+		if (big[i] == little[j])
+			j++;
+		else
+			j = 0;
+		if (little[j] == '\0')
 		{
-			str1++;
-			str2++;
+			return ((((char *) big + i - j +1)));
 		}
+		i++;
 	}
-	return (*str1 - *str2);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:35:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/15 19:30:30 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/16 20:10:53 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,21 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 /* compare 2 string, return positive if s1 > s2, negative if s2 > s1 
    else 0 if equal */
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
-
+/* locate the string little inside the string big and return where it begins.
+   doesn't search after len character */
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 /*** PART 2 ***/
 
 /* allocate and return a string based on s, starting on index start of len size*/
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
+/* map character of s into a new string and return it */
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+/* iterate the characters of s and apply the function f to each */
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 /** diplay the character c in the file descriptor fd **/
 void	ft_putchar_fd(char c, int fd);
 
