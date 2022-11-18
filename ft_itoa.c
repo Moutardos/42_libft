@@ -1,43 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 19:26:19 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/18 21:28:38 by lcozdenm         ###   ########.fr       */
+/*   Created: 2022/11/18 20:55:47 by lcozdenm          #+#    #+#             */
+/*   Updated: 2022/11/18 21:28:11 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+
+static int	ft_get_power(int n)
 {
+	size_t	pow;
+
+	pow = 1;
+	while (n < 10)
+		n /= 10;
+	return (pow);
+}
+char	*ft_itoa(int n)
+{
+	size_t	size;
+	char	*res;
 	size_t	i;
-	size_t	j;
 
 	i = 0;
-	j = 0;
-	while (i < size )
+	size = ft_get_power(ABS(n));
+	res = malloc(sizeof(char) * size + 1);
+	if (n == -2147483648)
 	{
-		if (dst[i] == '\0')
-			break;
-		i++;
+		res = "-2147483648";
+		return res;
 	}
-	if (i == size)
+	if (n < 0)
 	{
-		return (size + ft_strlen(src));
+		res[0] = '-';
+		i = 1;
+		n *= -1;
 	}
-	while (i < (size - 1) && src[j] != '\0')
+	while (n > 10)
 	{
-		dst[i] = src[j];
-		i++;
-		j++;
+		res[size - i - 1] = n % 10 + '0';
 	}
-	dst[i] = '\0';
-	return ((i - j) + ft_strlen(src)); 
+	return res;
 }
-
-/* Return the number of char in the original dst + the length of src */
-

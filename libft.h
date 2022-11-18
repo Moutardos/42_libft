@@ -6,7 +6,7 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:35:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/16 20:10:53 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/18 21:21:47 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # define STDOUT 1
 # define STDIN 0
-
+# define ABS(x) (x >=0 ? x : x * -1 )
 /*** PART 1 ***/
 /*return the length of the NUL character terminated string s*/
 size_t	ft_strlen(const char *s);
@@ -77,7 +77,7 @@ char	*ft_strchr(const char *s, int c);
 /* return a pointer to the last occurence of c in the string s */
 char	*ft_strrchr(const char *s, int c);
 
-/* copy and concatenate src into dst, garantee to be NUL terminated */
+/* copy or concatenate src into dst, garantee to be NUL terminated */
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
@@ -109,4 +109,7 @@ void	ft_putendl_fd(char *s, int fd);
 
 /* print the integer in the file director */
 void	ft_putnbr_fd(int n, int fd);
+
+/**/
+char	*ft_itoa(int n);
 #endif
