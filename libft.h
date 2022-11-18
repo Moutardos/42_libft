@@ -6,7 +6,7 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:35:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/18 21:21:47 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/18 21:49:52 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 # define LIBFT_H
 # include <stddef.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include <stdint.h>
 # include <unistd.h>
 # define STDOUT 1
 # define STDIN 0
-# define ABS(x) (x >=0 ? x : x * -1 )
+# define ABS(X) (X >=0 ? X : -X )
 /*** PART 1 ***/
 /*return the length of the NUL character terminated string s*/
 size_t	ft_strlen(const char *s);

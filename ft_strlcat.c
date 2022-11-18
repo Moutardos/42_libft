@@ -6,12 +6,11 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 19:26:19 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/18 21:28:38 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/18 21:30:56 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
