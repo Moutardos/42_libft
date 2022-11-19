@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 19:26:09 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/18 16:54:56 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/19 19:39:26 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		dst = NULL;
 		return (ft_strlen(src));
 	}
-	while ( i < (size - 1) && src[i] != '\0')
+	while (i < (size - 1) && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;

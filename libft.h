@@ -6,7 +6,7 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:35:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/18 21:49:52 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/19 22:05:37 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,12 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 /*** PART 2 ***/
 
+/* allocate a concatenation of s1 and s2 */
+char	*ft_strjoin(char const *s1, char const *s2);
+
+/* return an allocated string where the characters in set from the begining and end of s1 are removed*/
+char	*ft_strtrim(char const *s1, char const *set);
+
 /* allocate and return a string based on s, starting on index start of len size*/
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
@@ -111,6 +117,6 @@ void	ft_putendl_fd(char *s, int fd);
 /* print the integer in the file director */
 void	ft_putnbr_fd(int n, int fd);
 
-/**/
+/* take an int and return an allocated string of the value*/
 char	*ft_itoa(int n);
 #endif

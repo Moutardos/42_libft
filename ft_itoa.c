@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 20:55:47 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/18 21:52:36 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/19 19:54:27 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static int	ft_get_power(int n)
 {
 	size_t	pow;
+
 	pow = 1;
 	while (n >= 10)
 	{
@@ -23,6 +24,12 @@ static int	ft_get_power(int n)
 	}
 	return (pow);
 }
+
+static char	*ft_imintoa(void)
+{
+	return (ft_strdup("-2147483648"));
+}
+
 char	*ft_itoa(int n)
 {
 	size_t	size;
@@ -31,10 +38,7 @@ char	*ft_itoa(int n)
 	size_t	is_minus;
 
 	if (n == -2147483648)
-	{
-		res = "-2147483648";
-		return res;
-	}
+		return (ft_imintoa());
 	is_minus = 0;
 	i = 0;
 	size = ft_get_power(ABS(n));
@@ -48,11 +52,9 @@ char	*ft_itoa(int n)
 		res[0] = '-';
 	while ((i) < size)
 	{
-		res[size - i - 1 + is_minus] = n % 10 + '0';
+		res[size - i++ - 1 + is_minus] = n % 10 + '0';
 		n /= 10;
-		i++;
 	}
 	res[size + is_minus] = '\0';
-	return res;
+	return (res);
 }
-
