@@ -6,12 +6,19 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 20:43:44 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/09/20 21:03:55 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:16:01 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(s, 0, (int) n);
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *) s)[i] = 0;
+		i++;
+	}
 }

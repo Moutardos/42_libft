@@ -1,5 +1,5 @@
 CC = cc
-AR= ar rc
+AR= ar
 NAME = libft.a
 SRC = ft_atoi.c ft_calloc.c ft_isalpha.c ft_isdigit.c ft_itoa.c ft_memcmp.c\
 ft_memmove.c ft_putchar_fd.c ft_putnbr_fd.c ft_split.c ft_strdup.c\
@@ -12,7 +12,7 @@ BONUS = ft_lstnew.c ft_lstdelone.c ft_lstclear.c ft_lstadd_front.c ft_lstadd_bac
 ft_lstmap.c ft_lstiter.c ft_lstlast.c ft_lstsize.c
 BONUS_OBJ = $(BONUS:.c=.o)
 RM = rm -f
-LIBFLAGS = -cvq
+LIBFLAGS = -rc
 CFLAGS = -Wall -Wextra -Werror -o
 
 all: $(NAME)
@@ -38,5 +38,8 @@ test: $(NAME)
 bonus: $(BONUS_OBJ)
 	$(AR) $(LIBFLAGS) $(NAME) $(BONUS_OBJ)
 
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
-.PHONY: all clean fclean re test bonus
+.PHONY: all clean fclean re test bonus so

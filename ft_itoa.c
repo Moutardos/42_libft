@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 20:55:47 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/19 19:54:27 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:54:53 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,25 @@ static char	*ft_imintoa(void)
 	return (ft_strdup("-2147483648"));
 }
 
+static char	*ft_allocitoa(size_t size, size_t is_minus)
+{
+	char	*res;
+
+	if (size + 1 + is_minus >= SIZE_MAX)
+		return (NULL);
+	res = malloc(sizeof(char) * size + 1 + is_minus);
+	return (res);
+}
+
+static	void	ft_negative(size_t *is_minus, int *n)
+{
+	if (*n < 0)
+	{
+		*is_minus = 1;
+		*n *= -1;
+	}
+}
+
 char	*ft_itoa(int n)
 {
 	size_t	size;
@@ -41,13 +60,11 @@ char	*ft_itoa(int n)
 		return (ft_imintoa());
 	is_minus = 0;
 	i = 0;
-	size = ft_get_power(ABS(n));
-	if (n < 0)
-	{
-		is_minus = 1;
-		n *= -1;
-	}
-	res = malloc(sizeof(char) * size + 1 + is_minus);
+	ft_negative(&is_minus, &n);
+	size = ft_get_power(n);
+	res = ft_allocitoa(size, is_minus);
+	if (res == NULL)
+		return (NULL);
 	if (is_minus)
 		res[0] = '-';
 	while ((i) < size)

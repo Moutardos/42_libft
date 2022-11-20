@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 13:38:45 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/20 14:10:39 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:06:13 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*current;
-	
-	if (lst == NULL ||  *lst == NULL)
+
+	if (lst == NULL || *lst == NULL)
 	{
 		*lst = new;
 		return ;
@@ -24,7 +24,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	current = *lst;
 	while (current->next)
 	{
-		current = current->next; 
+		current = current->next;
 	}
-	current->next = new;	
+	current->next = new;
 }

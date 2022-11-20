@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:32:16 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/20 16:04:00 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:09:18 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	size;
-	
+
 	if (start > ft_strlen(s))
-		return ft_strdup("");
+		return (ft_strdup(""));
 	size = ft_strlen(s + start);
 	if (len > size)
 		len = size;
@@ -30,10 +30,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(substr, s + start, len + 1);
 	return (substr);
 }
-
 /*
 int	main(int ac, char **av)
 {
-	printf("%s + %d -> %s\n", av[1], ft_atoi(av[2]), ft_substr(av[1], ft_atoi(av[2]), ft_atoi(av[3])));
+	printf("%s + %d -> %s\n", av[1], 
+	ft_atoi(av[2]), ft_substr(av[1], ft_atoi(av[2]), ft_atoi(av[3])));
 }
 */
