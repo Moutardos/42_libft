@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 12:53:59 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/20 13:02:54 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/20 13:15:47 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	new;
+	t_list	*new;
 
 	new = malloc(sizeof(t_list));
 	if (new == NULL)
 		return (NULL);
 	new->content = content;
+	new->next = NULL;
 	return (new);
 }

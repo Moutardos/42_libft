@@ -6,7 +6,7 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 22:01:30 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/20 10:34:17 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/20 17:08:25 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,20 @@ static size_t	wc(char const *s1, char const *set, size_t *start, size_t *end)
 	size_t	i;
 
 	i = 0;
-	while (*s1 && ft_char_in_str(*s1, set))
-	{
-		s1++;
+	while (s1[i] && ft_char_in_str(s1[i], set))
 		i++;
-	}
 	*start = i;
-	while (*s1 && *(s1 + 1))
+	if (!s1[i])
 	{
+		*end = i;
+		return (*end - *start);
+	}
+	while (s1[i] && s1[i+ 1])
 		i++;
-		s1++;
-	}
-	while (*s1 && ft_char_in_str(*s1, set))
-	{
-		s1--;
+	while (i && ft_char_in_str(s1[i], set))
 		i--;
-	}
-	*end = i + 1;
-	return (*end - *start);
+	*end = i;
+	return (*end - *start + 1);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
