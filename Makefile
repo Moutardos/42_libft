@@ -32,14 +32,7 @@ fclean : clean
 
 re: fclean all
 
-test: $(NAME)
-	$(CC) holdup/$@.c -o $@ $<
-
 bonus: $(BONUS_OBJ)
 	$(AR) $(LIBFLAGS) $(NAME) $(BONUS_OBJ)
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 .PHONY: all clean fclean re test bonus so

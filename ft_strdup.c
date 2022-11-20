@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 14:44:28 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/16 19:38:11 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/20 19:37:00 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s)
 	size_t	i;
 
 	size = ft_strlen(s);
-	if (size + 1 > SIZE_MAX)
+	if (size + 1 >= SIZE_MAX)
 		return (NULL);
 	s_dup = malloc(size + 1);
 	if (s_dup == NULL)
