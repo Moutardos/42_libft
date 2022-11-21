@@ -6,7 +6,7 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:35:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/20 12:16:22 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/21 13:43:34 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,11 @@
 
 # define STDOUT 1
 # define STDIN 0
-# define ABS(X) (X >=0 ? X : -X )
 
 typedef struct s_list
 {
-	void *content;
-	struct s_list *next;
+	void			*content;
+	struct s_list	*next;
 }	t_list;
 
 /*** PART 1 ***/
@@ -108,7 +107,6 @@ void	*ft_calloc(size_t nmemb, size_t size);
 /* duplicate a string and return a pointer to it */
 char	*ft_strdup(const char *s);
 
-
 /*** PART 2 ***/
 
 /** STR **/
@@ -116,10 +114,12 @@ char	*ft_strdup(const char *s);
 /* allocate a concatenation of s1 and s2 */
 char	*ft_strjoin(char const *s1, char const *s2);
 
-/* return an allocated string where the characters in set from the begining and end of s1 are removed*/
+/* return an allocated string where the characters in set from the beggining
+	and end of s1 are removed*/
 char	*ft_strtrim(char const *s1, char const *set);
 
-/* allocate and return a string based on s, starting on index start of len size*/
+/* allocate and return a string based on s, starting 
+	on index start of len size*/
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 /* map character of s into a new string and return it */
@@ -150,7 +150,6 @@ void	ft_putnbr_fd(int n, int fd);
 /* take an int and return an allocated string of the value*/
 char	*ft_itoa(int n);
 
-
 /*** BONUS ***/
 
 /** LINKED LIST **/
@@ -161,7 +160,7 @@ t_list	*ft_lstnew(void *content);
 /* add the new element at the start of the linked list */
 void	ft_lstadd_front(t_list **lst, t_list *new);
 
-int	ft_lstsize(t_list *lst);
+int		ft_lstsize(t_list *lst);
 
 t_list	*ft_lstlast(t_list *lst);
 
