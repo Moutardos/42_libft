@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:57:27 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/15 18:49:47 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:22:58 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,9 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	size;
-	size_t	i;
-
+	
+	if (s == NULL)
+		return ;
 	size = ft_strlen(s);
-	i = 0;
-	while (i < size)
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	write(fd, s, size);
 }
