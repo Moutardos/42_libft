@@ -18,6 +18,8 @@ char	*ft_strdup(const char *s)
 	size_t	size;
 	size_t	i;
 
+	if (str == NULL)
+		return (NULL);
 	size = ft_strlen(s);
 	if (size >= SIZE_MAX)
 		return (NULL);
