@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 	size_t	size;
 	size_t	i;
 
-	if (str == NULL)
+	if (s == NULL)
 		return (NULL);
 	size = ft_strlen(s);
 	if (size >= SIZE_MAX)
