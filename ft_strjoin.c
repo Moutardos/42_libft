@@ -20,7 +20,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 
 	size_s1 = ft_strlen(s1);
 	size_s2 = ft_strlen(s2);
-	if (size_s1 + size_s2 + 1 > SIZE_MAX)
+	if (size_s1 + size_s2 >= SIZE_MAX)
 		return (NULL);
 	res = malloc(size_s1 + size_s2 + 1);
 	if (res == NULL)
