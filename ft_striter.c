@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itohexa.c                                       :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lcozdenm <lcozdenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 16:39:52 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/25 16:08:45 by lcozdenm         ###   ########.fr       */
+/*   Created: 2022/11/25 16:57:52 by lcozdenm          #+#    #+#             */
+/*   Updated: 2022/11/25 17:29:42 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itohexa(int n)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	(void) n;
-	return (NULL);
+	size_t	i;
+ 
+	i = 0;
+	while (s[i])
+	{
+		f(&s[i]);
+		i++;
+	}
 }

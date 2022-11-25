@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itohexa.c                                       :+:      :+:    :+:   */
+/*   ft_strup.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lcozdenm <lcozdenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 16:39:52 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/23 15:56:16 by lcozdenm         ###   ########.fr       */
+/*   Created: 2022/11/25 15:50:56 by lcozdenm          #+#    #+#             */
+/*   Updated: 2022/11/25 17:27:16 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static size_t		ft_hex_size(int n)
+#include "libft.h"
+
+char	*ft_strup(char *s)
 {
-	size_t	i;
-	
-	i = 1;
-	while(n > 16)
-	{
-		i++;
-		n /= 16;
-	}
-	return (i);
+	char	*res;
+
+	if (s == NULL)
+		return (NULL);
+	res = ft_strmap(s, ft_toupper);
+	return (res);
 }

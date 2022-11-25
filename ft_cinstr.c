@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_cinstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 17:07:04 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/20 19:41:35 by lcozdenm         ###   ########.fr       */
+/*   Created: 2022/11/25 15:54:37 by lcozdenm          #+#    #+#             */
+/*   Updated: 2022/11/25 16:11:11 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_cinstr(char const *s, char c)
 {
-	int		res;
-	int		sign;
-	size_t	i;
-
-	res = 0;
-	i = 0;
-	sign = 1;
-	while (nptr[i] && ft_isspace(nptr[i]))
-		i++;
-	if (nptr[i] && (nptr[i] == '-' || nptr[i] == '+'))
+	while (*s)
 	{
-		if (nptr[i] == '-')
-			sign *= -1;
-		i++;
+		if (*s == c)
+			return (1);
+		s++;
 	}
-	while (nptr[i] && ft_isdigit(nptr[i]))
-	{
-		res *= 10;
-		res += (nptr[i] - '0') * sign;
-		i++;
-	}
-	return (res);
+	return (0);
 }

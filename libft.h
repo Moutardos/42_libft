@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
+/*   By: lcozdenm <lcozdenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:35:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/21 13:43:34 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/25 17:24:26 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,9 @@ int		ft_isascii(int c);
 /* return 1 if the character is printable */
 int		ft_isprint(int c);
 
+/* return 1 if the character is considerate space (see man) */
+int		ft_isspace(int c);
+
 /* return the character to uppercase */
 int		ft_toupper(int c);
 
@@ -106,6 +109,12 @@ void	*ft_calloc(size_t nmemb, size_t size);
 
 /* duplicate a string and return a pointer to it */
 char	*ft_strdup(const char *s);
+
+/*Return a duplicate uppercase version of s*/
+char	*ft_strup(char *s);
+
+/*Return a duplicate lowercase version of s*/
+char	*ft_strlow(char *s);
 
 /*** PART 2 ***/
 
@@ -124,13 +133,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 /* map character of s into a new string and return it */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_strmap(char const *s, int (*f)(int));
 
 /* iterate the characters of s and apply the function f to each */
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_striter(char *s, void (*f)(char *));
 
 /* return an array of the words found in s, delimited by c */
 char	**ft_split(char const *s, char c);
 
+/* return 1 if the char c is in s */
+int		ft_cinstr(char const *s, char c);
 /** DISPLAY **/
 
 /** display the character c in the file descriptor fd **/
@@ -150,6 +163,11 @@ void	ft_putnbr_fd(int n, int fd);
 /* take an int and return an allocated string of the value*/
 char	*ft_itoa(int n);
 
+/* take an int and return an allocated string of the value in base */
+char	*ft_itob(int n, char *base);
+
+/* return the int n in a hexa */
+char	*ft_itohexa(int n);
 /*** BONUS ***/
 
 /** LINKED LIST **/
@@ -173,5 +191,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
 
 #endif

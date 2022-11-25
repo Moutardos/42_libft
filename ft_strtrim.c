@@ -6,23 +6,11 @@
 /*   By: lcozdenm <loic.cozdenmat@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 22:01:30 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/20 18:08:05 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:02:05 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* return 1 if c is in str */
-static	int	ft_char_in_str(char c, char const *str)
-{
-	while (*str)
-	{
-		if (*str == c)
-			return (1);
-		str++;
-	}
-	return (0);
-}
 
 /* set start and end to the index of the trimmed part, return the size of it */
 static size_t	wc(char const *s1, char const *set, size_t *start, size_t *end)
@@ -30,7 +18,7 @@ static size_t	wc(char const *s1, char const *set, size_t *start, size_t *end)
 	size_t	i;
 
 	i = 0;
-	while (s1[i] && ft_char_in_str(s1[i], set))
+	while (s1[i] && ft_cinstr(set, s1[i]))
 		i++;
 	*start = i;
 	if (!s1[i])
@@ -40,7 +28,7 @@ static size_t	wc(char const *s1, char const *set, size_t *start, size_t *end)
 	}
 	while (s1[i] && s1[i + 1])
 		i++;
-	while (i && ft_char_in_str(s1[i], set))
+	while (i && ft_cinstr(set, s1[i]))
 		i--;
 	*end = i;
 	return (*end - *start + 1);
