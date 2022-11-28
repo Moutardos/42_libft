@@ -6,7 +6,7 @@
 /*   By: lcozdenm <lcozdenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:35:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/25 17:24:26 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:18:24 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,16 +147,16 @@ int		ft_cinstr(char const *s, char c);
 /** DISPLAY **/
 
 /** display the character c in the file descriptor fd **/
-void	ft_putchar_fd(char c, int fd);
+int		ft_putchar_fd(char c, int fd);
 
 /** display the string s in the file descriptor **/
-void	ft_putstr_fd(char *s, int fd);
+int		ft_putstr_fd(char *s, int fd);
 
 /** display the string s in the file descriptor followed by a newline **/
 void	ft_putendl_fd(char *s, int fd);
 
 /* print the integer in the file director */
-void	ft_putnbr_fd(int n, int fd);
+int		ft_putnbr_fd(int n, int fd);
 
 /** CONVERT **/
 
