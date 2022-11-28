@@ -6,7 +6,7 @@
 /*   By: lcozdenm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 16:39:52 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/25 16:08:45 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/28 13:41:50 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 char	*ft_itohexa(int n)
 {
-	(void) n;
-	return (NULL);
+	return (ft_itob(n, "0123456789abcdef"));
 }
