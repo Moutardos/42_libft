@@ -6,7 +6,7 @@
 /*   By: lcozdenm <lcozdenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:35:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/28 20:18:24 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/30 08:57:32 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdint.h>
 # include <unistd.h>
+# include <limits.h>
 
 # define STDOUT 1
 # define STDIN 0
@@ -146,17 +147,20 @@ char	**ft_split(char const *s, char c);
 int		ft_cinstr(char const *s, char c);
 /** DISPLAY **/
 
-/** display the character c in the file descriptor fd **/
+/* display the character c in the file descriptor fd */
 int		ft_putchar_fd(char c, int fd);
 
-/** display the string s in the file descriptor **/
+/* display the string s in the file descriptor */
 int		ft_putstr_fd(char *s, int fd);
 
 /** display the string s in the file descriptor followed by a newline **/
 void	ft_putendl_fd(char *s, int fd);
 
-/* print the integer in the file director */
+/* print the integer in the file descriptor */
 int		ft_putnbr_fd(int n, int fd);
+
+/* print the UNSIGNED number hexadecimal form in the file descriptor*/
+int	ft_puthex_fd(size_t n, int fd);
 
 /** CONVERT **/
 
@@ -191,6 +195,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
 
 #endif

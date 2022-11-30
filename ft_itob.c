@@ -6,7 +6,7 @@
 /*   By: lcozdenm <lcozdenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:49:29 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/28 13:32:39 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:19:40 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ char	*ft_itob(int n, char *base)
 	res = ft_allocitoa(size, is_minus);
 	if (res == NULL)
 		return (NULL);
-	printf("%s, bsize: %zu nb of digit %zu\n", base, base_size, size);
 	if (is_minus)
 		res[0] = '-';
 	while ((i) < size)

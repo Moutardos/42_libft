@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_puthex_fd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcozdenm <lcozdenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 13:29:27 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/30 08:32:31 by lcozdenm         ###   ########.fr       */
+/*   Created: 2022/11/15 17:34:44 by lcozdenm          #+#    #+#             */
+/*   Updated: 2022/11/30 08:49:44 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+int	ft_puthex_fd(size_t n, int fd)
 {
-	t_list	*next;
+	char	*base = "0123456789abcdef";
+	size_t	size = 16;
 
-	while (*lst != NULL)
+	if (n > size - 1)
 	{
-		next = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = next;
+		return (ft_puthex_fd(n / size, fd) + ft_puthex_fd(n % size, fd));
 	}
+	else
+		return (ft_putchar_fd(base[n % size], fd));
 }
