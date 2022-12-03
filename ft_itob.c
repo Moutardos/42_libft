@@ -6,7 +6,7 @@
 /*   By: lcozdenm <lcozdenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:49:29 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/29 16:19:40 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/12/03 19:18:35 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_blen(int n, char *base)
 {
-	int	i;
+	int		i;
 	size_t	base_size;
 
 	base_size = ft_strlen(base);
@@ -26,7 +26,6 @@ static int	ft_blen(int n, char *base)
 	}
 	return (i);
 }
-
 
 static char	*ft_allocitoa(size_t size, size_t is_minus)
 {
@@ -46,7 +45,6 @@ static	void	ft_negative(size_t *is_minus, int *n)
 		*n *= -1;
 	}
 }
-
 
 /* !! NE TRAITE PAS INT MIN LOOL */
 char	*ft_itob(int n, char *base)

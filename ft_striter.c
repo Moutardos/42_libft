@@ -6,7 +6,7 @@
 /*   By: lcozdenm <lcozdenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:57:52 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/25 17:29:42 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/12/03 19:19:03 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_striter(char *s, void (*f)(char *))
 {
 	size_t	i;
- 
+
 	i = 0;
 	while (s[i])
 	{
