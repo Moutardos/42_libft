@@ -6,7 +6,7 @@
 /*   By: lcozdenm <lcozdenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:35:07 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/30 08:57:32 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/12/03 15:58:47 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,9 +158,10 @@ void	ft_putendl_fd(char *s, int fd);
 
 /* print the integer in the file descriptor */
 int		ft_putnbr_fd(int n, int fd);
-
-/* print the UNSIGNED number hexadecimal form in the file descriptor*/
-int	ft_puthex_fd(size_t n, int fd);
+int		ft_putnbru_fd(unsigned int n, int fd);
+/* print the UNSIGNED number hexadecimal form in the file descriptor,
+   with the nsize and in uppercase or not*/
+int	ft_puthex_fd(size_t n, int fd, unsigned int nsize, int up);
 
 /** CONVERT **/
 
@@ -172,6 +173,10 @@ char	*ft_itob(int n, char *base);
 
 /* return the int n in a hexa */
 char	*ft_itohexa(int n);
+
+
+/* return power of n to the pow*/
+long	ft_pow(int n, int pow);
 /*** BONUS ***/
 
 /** LINKED LIST **/

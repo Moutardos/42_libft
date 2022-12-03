@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex_fd.c                                        :+:      :+:    :+:   */
+/*   ft_putnbru_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcozdenm <lcozdenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 17:34:44 by lcozdenm          #+#    #+#             */
-/*   Updated: 2022/11/30 08:49:44 by lcozdenm         ###   ########.fr       */
+/*   Updated: 2022/12/03 15:59:00 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_puthex_fd(size_t n, int fd, unsigned int nsize, int up)
+int	ft_putnbru_fd(unsigned int n, int fd)
 {
-	const char			*base = "0123456789abcdef";
-	const char			*baseU = "0123456789ABCDEF";
-	const size_t		size = 16;
-	size_t				mask;
-	int					wc;
-	
-	mask = 0;
-	wc = 0;
-	if (nsize > sizeof(size_t))
-		return (0);
-	mask = ft_pow(2, nsize * 8) - 1;
-	n &= mask;
-	if (n > size - 1)
-	{
-		wc = ft_puthex_fd(n / size, fd, nsize, up);
-		return (wc + ft_puthex_fd(n % size, fd, nsize, up));
-	}
+	if (n > 9)
+		return (ft_putnbr_fd(n / 10, fd) + ft_putnbr_fd(n % 10, fd));
 	else
-		if (up)
-			return(ft_putchar_fd(baseU[n % size], fd));
-		return (ft_putchar_fd(base[n % size], fd));
+		return (ft_putchar_fd('0' + n, fd));
+	
 }
