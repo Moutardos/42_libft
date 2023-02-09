@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   count_lines.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcozdenm <lcozdenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 16:56:22 by lcozdenm          #+#    #+#             */
-/*   Updated: 2023/01/06 13:04:19 by lcozdenm         ###   ########.fr       */
+/*   Created: 2023/01/06 12:49:24 by lcozdenm          #+#    #+#             */
+/*   Updated: 2023/02/09 09:00:16 by lcozdenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
-char	*ft_strmap(char const *s, int (*f)(int))
+int	count_lines(int fd)
 {
-	char	*str_res;
-	size_t	size;
-	size_t	i;
+	int		total;
+	char	*line;
 
-	str_res = ft_strdup(s);
-	if (str_res == NULL)
-		return (NULL);
-	size = ft_strlen(str_res);
-	i = 0;
-	while (i < size)
+	total = 0;
+	line = get_next_line(fd);
+	while (line)
 	{
-		str_res[i] = f(s[i]);
-		i++;
+		total++;
+		free(line);
+		line = get_next_line(fd);
 	}
-	return (str_res);
+	return (total);
 }
