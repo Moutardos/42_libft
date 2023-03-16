@@ -2,6 +2,7 @@ CC = cc
 AR= ar
 NAME = libft.a
 ODIR = obj
+SDIR = src
 _OBJS =  ft_atoi.o ft_calloc.o ft_isalpha.o ft_isdigit.o ft_itoa.o ft_memcmp.o\
 ft_memmove.o ft_putchar_fd.o ft_putnbr_fd.o ft_split.o ft_strdup.o\
 ft_strjoin.o ft_strlcpy.o ft_strmapi.o ft_strnstr.o ft_strtrim.o ft_tolower.o\
@@ -29,7 +30,7 @@ $(ODIR):
 	@ mkdir -p $(ODIR)/ft_printf
 	@ mkdir -p $(ODIR)/gnl
 
-$(ODIR)/%.o : %.c | $(ODIR)
+$(ODIR)/%.o : $(SDIR)/%.c | $(ODIR)
 	@ $(CC) $(CFLAGS)  $@ -c $<
 
 $(NAME) : $(OBJS)
